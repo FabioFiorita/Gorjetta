@@ -8,6 +8,7 @@
 - [Gorjetta](#gorjetta)
   - [🧑‍💻 Integrantes](#-integrantes)
   - [⚡️ O Projeto](#️-o-projeto)
+  - [🛠️ Backend](#️-backend)
   - [🎯 Funcionalidades](#-funcionalidades)
   - [🖥️ Tecnologias Usadas](#️-tecnologias-usadas)
 
@@ -19,6 +20,9 @@
 
 ## ⚡️ O Projeto
   Aplicação Web desenvolvido em React para cálculo de gorjetas, por meio da qualidade do serviço e qualidade da comida.
+
+## 🛠️ Backend
+  Todo o código desenvolvido para o backend da aplicação está disponível no repositório [Gorjetta-API](https://github.com/FabioFiorita/Gorjetta-API)
 ## 🎯 Funcionalidades
  - [ ] - Cálculo de gorjeta utilizando a lógica fuzzy 
  - [ ] - Possibilidade de dividir o valor de acordo com a quantidade das pessoas
