@@ -31,6 +31,5 @@
 ## 🖥️ Tecnologias Usadas
  - [ReactJS](https://reactjs.org/)
  - [Python](https://www.python.org/)
- - [ChakraUI](https://chakra-ui.com/)
 
  
