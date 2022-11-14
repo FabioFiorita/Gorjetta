@@ -28,10 +28,10 @@ const Form = () => {
         <p className="label"> Selecione a nota da qualidade do serviço</p>
           <div className="service-wrapper">
               <QualitySelector grade={0} />
-              <QualitySelector grade={1} />
-              <QualitySelector grade={3} />
-              <QualitySelector grade={5} />
-              <QualitySelector grade={7} />
+              <QualitySelector grade={2} />
+              <QualitySelector grade={4} />
+              <QualitySelector grade={6} />
+              <QualitySelector grade={8} />
               <QualitySelector grade={10} />
           </div>
         </div>
@@ -39,10 +39,10 @@ const Form = () => {
           <p className="label"> Selecione a nota da qualidade da comida</p>
           <div className="food-wrapper">
               <QualitySelector grade={0} />
-              <QualitySelector grade={1} />
-              <QualitySelector grade={3} />
-              <QualitySelector grade={5} />
-              <QualitySelector grade={7} />
+              <QualitySelector grade={2} />
+              <QualitySelector grade={4} />
+              <QualitySelector grade={6} />
+              <QualitySelector grade={8} />
               <QualitySelector grade={10} />
           </div>
         </div>
