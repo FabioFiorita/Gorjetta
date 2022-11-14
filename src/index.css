@@ -1,13 +1,251 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --brand: #26c0ab;
+  --text: #00494d;
+  --dark: #003032;
+  --neutral1: #5e7a7d;
+  --neutral2: #7f9c9f;
+  --neutral3: #c5e4e7;
+  --neutral4: #f4fafa;
+  --white: #fbfdfd;
+
+  --padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-size: 1.5rem;
+  background-color: var(--neutral3);
+}
+
+.wrapper {
+  display: grid;
+  place-items: center;
+  gap: 3rem;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.container {
+  padding: var(--padding);
+  background-color: var(--white);
+  border-radius: 2rem;
+  box-shadow: 0 4rem 5rem var(--neutral2);
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--padding);
+}
+
+.form {
+  display: grid;
+  gap: var(--padding);
+}
+
+.label-group {
+  display: grid;
+  gap: 0.2rem;
+  text-align: left;
+  position: relative;
+}
+
+.label {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.number-wrapper {
+  position: relative;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"] {
+  width: 100%;
+  font: inherit;
+  text-align: right;
+  background-color: var(--neutral3);
+  border: none;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+}
+
+input[type="number"]:focus {
+  outline: none;
+}
+
+input[type="number"]:invalid {
+  outline: none;
+}
+
+.label-wrapper {
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 1.2rem;
+}
+
+.quality-wrapper {
+  display: grid;
+  justify-items: start;
+  gap: 0.5rem;
+}
+
+.service-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.2rem;
+}
+
+.food-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.2rem;
+}
+
+.service-section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.food-section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.grade-amout {
+  position: relative;
+}
+
+[name="grade"] {
+  display: none;
+}
+
+.grade-btn {
+  background-color: var(--text);
+  color: var(--neutral4);
+  border-radius: 0.4rem;
+  text-align: center;
+  padding: .15rem;
+}
+
+.grade-btn:hover {
+  background-color: var(--brand);
+  cursor: pointer;
+}
+
+/* Display Section*/
+.display {
+  background-color: var(--text);
+  padding: var(--padding);
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.display-group {
+  display: grid;
+  gap: var(--padding);
+}
+
+.display-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--padding);
+  align-items: center;
+  text-align: left;
+}
+
+.display-label {
+  display: grid;
+  justify-items: start;
+}
+
+.header {
+  color: var(--neutral3);
+  font-size: 1rem;
+}
+
+.unit {
+  color: var(--neutral2);
+  font-size: 0.8rem;
+}
+
+.display-amt {
+  font-size: 2rem;
+  color: var(--brand);
+}
+
+.btn {
+  font: inherit;
+  background-color: var(--brand);
+  color: var(--text);
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.8rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0.2rem 2rem var(--dark / 0.8), 0 0 0 -0.2rem var(--text),
+    0 0 0 -0.2rem var(--neutral1);
+  transition: box-shadow 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn[disabled] {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:not([disabled]):hover {
+  box-shadow: 0 0 0 var(--dark), 0 0 0 -0.2rem var(--text),
+    0 0 0 -0.2rem var(--brand);
+  background-color: var(--neutral3);
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0.2rem 0.2rem var(--dark), 0 0.2rem 0.2rem var(--text),
+    0 0.2rem 0.2rem var(--brand);
 }
