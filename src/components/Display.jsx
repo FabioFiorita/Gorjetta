@@ -4,7 +4,7 @@ const Display = ({ calculatedTip, calculatedTotal, calculatedPerPerson, toggleRe
       <div className="display-group">
           <div className="display-row">
             <div className="display-label">
-              <p className="header">Valor da Gorjjeta</p>
+              <p className="header">Valor da Gorjeta</p>
             </div>
             <p className="display-amt">{"R$ " + calculatedTip.toFixed(2).toString().replace(".",",")}</p>
           </div>
