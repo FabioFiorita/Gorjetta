@@ -1,5 +1,5 @@
 // style
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 // components
@@ -41,30 +41,39 @@ function App() {
     }
   }
 
-  async function handleRequest() {
-    await fetch(`http://0.0.0.0:7999/gorjeta?servico=${selectedService}&comida=${selectedFood}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((response) => {
+  function handleSubmit() {
+    fetch(
+      `http://0.0.0.0:7999/gorjeta?servico=${selectedService}&comida=${selectedFood}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((response) => {
       response.json().then((data) => {
         const percentageTip = data.gorjeta;
         console.log(percentageTip);
         const tip = (billAmt * percentageTip) / 100;
         setCalculatedTip(tip);
       });
-    })
-  };
+    });
+  }
 
-  async function handleSubmit() {
-    await handleRequest();
+  function calculate() {
     const total = Number(billAmt) + calculatedTip;
     const perPerson = total / people;
     setCalculatedTotal(total);
     setCalculatedPerPerson(perPerson);
     setToggleResetButton(true);
   }
+
+  useEffect(() => {
+    if (calculatedTip) {
+      calculate();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [calculatedTip]);
 
   function handleReset() {
     setBillAmt("");
@@ -92,7 +101,7 @@ function App() {
           handlePeopleInput={handlePeopleInput}
           handleSubmit={handleSubmit}
         />
-        <Display 
+        <Display
           calculatedTip={calculatedTip}
           calculatedTotal={calculatedTotal}
           calculatedPerPerson={calculatedPerPerson}
