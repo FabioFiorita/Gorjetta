@@ -41,13 +41,26 @@ function App() {
     }
   }
 
-  function handleSubmit() {
-    // Modificar para comunicar com a API
-    const tip = ((billAmt * selectedService) + (billAmt * selectedFood) / 2) / 100;
-    // ----------------------------------
-    const total = Number(billAmt) + tip;
+  async function handleRequest() {
+    await fetch(`http://0.0.0.0:7999/gorjeta?servico=${selectedService}&comida=${selectedFood}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((response) => {
+      response.json().then((data) => {
+        const percentageTip = data.gorjeta;
+        console.log(percentageTip);
+        const tip = (billAmt * percentageTip) / 100;
+        setCalculatedTip(tip);
+      });
+    })
+  };
+
+  async function handleSubmit() {
+    await handleRequest();
+    const total = Number(billAmt) + calculatedTip;
     const perPerson = total / people;
-    setCalculatedTip(tip);
     setCalculatedTotal(total);
     setCalculatedPerPerson(perPerson);
     setToggleResetButton(true);
