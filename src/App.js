@@ -43,7 +43,7 @@ function App() {
 
   function handleSubmit() {
     fetch(
-      `http://127.0.0.1:8000/gorjeta?servico=${selectedService}&comida=${selectedFood}`,
+      `http://127.0.0.1:8000/gorjeta?servico=${selectedService}&qualidade=${selectedFood}`,
       {
         method: "POST",
         headers: {
