@@ -38,7 +38,7 @@
  - [ReactJS](https://reactjs.org/)
  - [Python](https://www.python.org/)
 
-## ⚙️ Instale antes de tentar executar o projeto)
+## ⚙️ Instale antes de tentar executar o projeto
  - [Yarn](https://yarnpkg.com/)
 
 ## 🚀️ Executando os projetos
