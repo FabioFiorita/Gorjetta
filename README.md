@@ -15,7 +15,7 @@
   - [🚀️ Executando os projetos](#️-executando-os-projetos)
 
 <h1 align="center">
-  <img src="public/gorjetta-screen.png"/> 
+  <img src="public/gorjetta-screen.png#vitrinedev"/> 
 </h1>
 
 ## 🧑‍💻 Integrantes
